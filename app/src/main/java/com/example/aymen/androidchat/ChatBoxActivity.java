@@ -42,8 +42,10 @@ public class ChatBoxActivity extends AppCompatActivity {
         // get the nickame of the user
         Nickname= (String)getIntent().getExtras().getString(MainActivity.NICKNAME);
         //connect you socket client to the server
+        //ganti ip addres sesuai ip di pc servernya
+        //portnya sih terserah kalian
         try {
-            socket = IO.socket("http://192.168.1.3:3000");
+            socket = IO.socket("http://192.168.1.4:3000");
             socket.connect();
             socket.emit("join", Nickname);
         } catch (URISyntaxException e) {
